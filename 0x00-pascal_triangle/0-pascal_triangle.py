@@ -4,12 +4,13 @@ def pascal_triangle(n):
         return []
 
     triangle = []
-    for i in range(n):
-        row = [1] * (i + 1)  # Start with a row of 1s
-        for j in range(1, i):
-            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]  # Fill in the values
-        triangle.append(row)
     
+    for i in range(n):
+        row = [1] * (i + 1)  # Start with a row of ones
+        for j in range(1, i):  # Calculate the values in the middle
+            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+        triangle.append(row)
+
     return triangle
 
 # Example usage:
